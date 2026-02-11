@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประเพณีบุญบั้งไฟ - ตำนานแห่งศรัทธา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="c3.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <header class="hero">
+        <nav>
+            <div class="logo">บุญ<span>บั้งไฟ</span></div>
+            <div class="menu-link">มรดกภูมิปัญญาอีสาน</div>
+        </nav>
+        
+        <div class="hero-content">
+            <span class="badge">ตำนานแห่งพญาแถน</span>
+            <h1>สืบสานประเพณี<br><span class="gradient-text">บุญบั้งไฟ</span></h1>
+            <p>สัมผัสพลังแห่งศรัทธา และภูมิปัญญาท้องถิ่นที่สืบทอดกันมารุ่นสู่รุ่น<br>สู่สายตาชาวโลกในรูปแบบดิจิทัล</p>
+            
+            <a href="#gallery-section" class="scroll-btn">
+                <div class="mouse"></div>
+                <span>เลื่อนเพื่อรับชม</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="video-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>ขบวนแห่บั้งไฟสวยงามตระการตา งานประเพณีบุญบั้งไฟจังหวัดยโสธร ประจำปี 2567 บุญอีสานบ้านเฮา</h2>
+                <div class="line"></div>
+            </div>
+            <div class="video-frame">
+                <video controls poster="n1.jpg"> 
+                    <source src="vido3.mp4" type="video/mp4">
+                    Browser ไม่รองรับวิดีโอ
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery-section" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>เปิดตำนานเล่าขาน</h2>
+                <p>เลือกหัวข้อด้านล่างเพื่อเข้าสู่โลกแห่งความเชื่อ</p>
+            </div>
+            
+            <div class="bento-grid" id="grid-container"></div>
+        </div>
+    </section>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">✕</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-text">
+                    <span class="modal-subtitle">รายละเอียด</span>
+                    <h2 id="modal-title">หัวข้อ</h2>
+                    <p id="modal-desc">คำอธิบาย...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 โครงงานสืบสานประเพณีบุญบั้งไฟ | จัดทำเพื่อการศึกษา</p>
+    </footer>
+
+    <script src="java3.js"></script>
+</body>
+</html>
