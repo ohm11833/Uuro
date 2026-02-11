@@ -1,0 +1,226 @@
+/* =========================================
+   MASTER CSS สำหรับหน้าเนื้อหา (n1 - n10)
+   ========================================= */
+
+/* --- 1. ตั้งค่าพื้นฐาน (Global Settings) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #050505; /* พื้นหลังสีดำเข้ม */
+    font-family: 'Prompt', sans-serif; /* ฟอนต์หลัก */
+    color: #ffffff;
+    overflow-x: hidden; /* ป้องกันสกรอลบาร์แนวนอน */
+    -webkit-font-smoothing: antialiased; /* ทำให้ตัวหนังสือคมชัด */
+}
+
+/* --- 2. ส่วนหัวภาพปก (Hero Section) --- */
+.detail-header {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* ความสูง 60% ของหน้าจอ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* ภาพพื้นหลัง (Background Image) */
+.detail-header .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4); /* ปรับภาพให้มืดลง 60% เพื่อให้อ่านตัวหนังสือออก */
+    transition: transform 10s ease; /* เอฟเฟกต์ซูมช้าๆ */
+}
+
+/* เอฟเฟกต์ไล่เฉดสีดำจากด้านล่าง */
+.overlay-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #050505 5%, transparent 90%);
+    z-index: 0;
+}
+
+/* กล่องข้อความบนภาพปก */
+.header-content {
+    z-index: 2;
+    max-width: 900px;
+    animation: fadeUp 1s ease-out; /* เรียกใช้ Animation ลอยขึ้น */
+}
+
+/* ป้ายหมวดหมู่ (Badge) */
+.category-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff5e00, #ff9100); /* สีส้มไล่เฉด */
+    color: white;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 94, 0, 0.4);
+    text-transform: uppercase;
+}
+
+/* หัวข้อหลัก (H1) */
+.detail-header h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.8);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* คำโปรยใต้หัวข้อ */
+.detail-header p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 3. ส่วนเนื้อหาบทความ (Content Body) --- */
+.content-body {
+    background-color: #050505;
+    padding: 50px 20px 100px 20px;
+    min-height: 60vh;
+}
+
+.container-small {
+    max-width: 800px; /* บีบเนื้อหาให้อยู่ตรงกลาง อ่านง่าย */
+    margin: 0 auto;
+}
+
+/* ข้อความเกริ่นนำ (Intro Text) */
+.intro-text {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    border-left: 5px solid #ff5e00; /* เส้นสีส้มด้านหน้า */
+    padding-left: 25px;
+}
+
+/* หัวข้อย่อย (H3) */
+.content-body h3 {
+    color: #ff5e00;
+    font-size: 1.8rem;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* ย่อหน้าปกติ (Paragraph) */
+.content-body p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: #d0d0d0;
+}
+
+/* รายการ (List) */
+.content-body ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.content-body ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-bottom: 10px;
+    list-style-type: square; /* หัวข้อสี่เหลี่ยม */
+}
+
+.content-body ul li strong {
+    color: #ff9100; /* ตัวหนาสีส้มอ่อน */
+}
+
+/* กล่องข้อความไฮไลท์ (Quote Box) */
+.highlight-box {
+    background: rgba(255, 94, 0, 0.05); /* สีส้มจางๆ */
+    border: 1px solid rgba(255, 94, 0, 0.3);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* ไอคอนเครื่องหมายคำพูด (ตกแต่ง) */
+.highlight-box::before {
+    content: '"';
+    font-size: 5rem;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    color: rgba(255, 94, 0, 0.2);
+    font-family: serif;
+}
+
+.highlight-box p {
+    font-style: italic;
+    color: #ffcc80;
+    font-size: 1.4rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* เส้นคั่น (Divider) */
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #333, transparent);
+    margin: 80px 0;
+}
+
+/* --- 4. ปุ่มกลับหน้าหลัก (Back Button) --- */
+.btn-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-back-home {
+    display: inline-block;
+    padding: 16px 50px;
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid #333;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-back-home:hover {
+    background: #ff5e00;
+    border-color: #ff5e00;
+    color: white;
+    transform: translateY(-5px); /* ลอยขึ้นเมื่อเอาเมาส์ชี้ */
+    box-shadow: 0 10px 25px rgba(255, 94, 0, 0.4); /* เงาสีส้ม */
+}
+
+/* --- 5.
